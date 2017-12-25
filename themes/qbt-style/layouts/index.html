@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        {{ partial "head.html" }}
+    </head>
+    <body>
+
+        <div class="preloader"></div>
+
+        <!-- MAIN CONTAINER -->
+	    <div class="main-container">
+
+            {{ partial "header.html" }}
+
+            {{ partial "footer.html" }}
+
+            <div class="owl-custom-slider-wrap">
+                    <div class="owl-sections owl--in-dots">
+
+                        <!-- about / default -->
+                        {{ partial "about.html" }}
+
+                        <!-- services -->
+                        {{ partial "services.html" }}
+
+                        <!-- projects -->
+                        {{ partial "projects.html" }}
+
+                        <!-- news -->
+                        {{ partial "news.html" }}
+
+                        <!-- team -->
+                        {{ partial "team.html" }}
+
+
+                    </div>
+            </div>
+
+        </div>
+        <!-- END MAIN CONTAINER -->
+
+        {{ partial "js.html" }}
+    </body>
+</html>

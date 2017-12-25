@@ -1,0 +1,4 @@
+baseURL = "http://example.org/"
+languageCode = "ru-RU"
+title = "QIWI Blockchain Technologies"
+theme = "qbt-style"

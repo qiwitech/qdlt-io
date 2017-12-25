@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QIWI Blockchain Technologies</title>
+    <link>http://example.org/</link>
+    <description>Recent content on QIWI Blockchain Technologies</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ru-RU</language>
+    <lastBuildDate>Mon, 25 Dec 2017 18:20:09 +0300</lastBuildDate>
+    
+	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim</title>
+      <link>http://example.org/news/news02/</link>
+      <pubDate>Mon, 25 Dec 2017 18:20:09 +0300</pubDate>
+      
+      <guid>http://example.org/news/news02/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nemo enim ipsam quia voluptatem voluptas sit aspernatur</title>
+      <link>http://example.org/news/news01/</link>
+      <pubDate>Mon, 25 Dec 2017 18:20:06 +0300</pubDate>
+      
+      <guid>http://example.org/news/news01/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
