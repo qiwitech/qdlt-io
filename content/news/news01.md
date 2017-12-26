@@ -1,6 +1,7 @@
 ---
-title: "Nemo enim ipsam quia voluptatem voluptas sit aspernatur"
-text: ""
-date: 2017-12-25T18:20:06+03:00
+title: "QBT присоединились к Enterprise Ethereum Alliance"
+text: "текст про новость"
+date: 2017-07-20T12:56:10+03:00
 draft: true
+type: "News"
 ---

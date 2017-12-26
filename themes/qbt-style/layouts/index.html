@@ -11,27 +11,27 @@
         <!-- MAIN CONTAINER -->
 	    <div class="main-container">
 
-            {{ partial "header.html" }}
+            {{ partial "header.html" . }}
 
-            {{ partial "footer.html" }}
+            {{ partial "footer.html" . }}
 
             <div class="owl-custom-slider-wrap">
                     <div class="owl-sections owl--in-dots">
 
                         <!-- about / default -->
-                        {{ partial "about.html" }}
+                        {{ partial "about.html" . }}
 
                         <!-- services -->
-                        {{ partial "services.html" }}
+                        {{ partial "services.html" . }}
 
                         <!-- projects -->
-                        {{ partial "projects.html" }}
+                        {{ partial "projects.html" . }}
 
                         <!-- news -->
-                        {{ partial "news.html" }}
+                        {{ partial "news.html" . }}
 
                         <!-- team -->
-                        {{ partial "team.html" }}
+                        {{ partial "team.html" . }}
 
 
                     </div>

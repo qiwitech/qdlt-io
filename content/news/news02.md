@@ -1,6 +1,7 @@
 ---
-title: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim"
-text: ""
-date: 2017-12-25T18:20:09+03:00
+title: "QBT признана единственной российской компанией имеющей доступ к 3 из 5 блокчейн- платформам"
+text: "текст про новость"
+date: 2017-11-15T12:56:05+03:00
 draft: true
+type: "News"
 ---
