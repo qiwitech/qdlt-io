@@ -592,6 +592,25 @@ button {
 	padding-right: 10px;
 }
 
+@media (max-width: 991px) {
+	.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.row {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	[class^='col-lg'],
+	[class^='col-md'],
+	[class^='col-sm'],
+	[class^='col-xs'],
+	[class^='col-xsl'] {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
 .col-xsl-12,
 .col-xsl-11,
 .col-xsl-10,
