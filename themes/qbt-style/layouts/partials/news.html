@@ -2,45 +2,48 @@
         <div class="section-in">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-9 col-sm-offset-3"><div class="s-title">Новости</div></div>
+                    <div class="col-md-9 col-md-offset-2 col-lg-offset-3"><div class="s-title">Новости</div></div>
                 </div>
-                <div class="row">
-                        
+                <div class="row mb-slick-t2">
                         {{ range $i,$p := where .Data.Pages.ByDate.Reverse "Type" "News" }}
 
-                            {{if not (modBool $i 2)}}
+                        {{if not (modBool $i 2)}}
 
-                            <div class="col-sm-5 col-sm-offset-7">
+                        <div class="col-sm-6 col-md-12 col-lg-5 col-lg-offset-1">
+                            <div class="news-article">
+                                <div class="news-article__img grayscale"><a href="#"><img src="img/news/img1.jpg"></a></div>
+                                <div class="news-article__content">
+                                    <div class="news-article__title">
+                                        <a href="#">{{.Title}}</a>
+                                    </div>
+                                    <div class="news-article__date hidden-sm">{{.Date.Format "2 January 2006"}}</div>
+                                    <div class="news-article__date hidden show-sm">{{.Date.Format "2 01 2006"}}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{else}}
+
+                        <div class="col-sm-6 col-md-6 col-md-offset-6 col-lg-5 col-lg-offset-7">
                                 <div class="news-article">
-                                    <div class="news-article__img grayscale"><a href="#"><img src="img/news/img3.png"></a></div>
+                                    <div class="news-article__img grayscale"><a href="#"><img src="img/news/img2.jpg"></a></div>
                                     <div class="news-article__content">
                                         <div class="news-article__title">
                                             <a href="#">{{.Title}}</a>
                                         </div>
-                                        <div class="news-article__date">{{.Date.Format "2 January 2006"}}</div>
+                                        <div class="news-article__date hidden-sm">{{.Date.Format "2 January 2006"}}</div>
+                                        <div class="news-article__date hidden show-sm">{{.Date.Format "2 01 2006"}}</div>
                                     </div>
                                 </div>
                             </div>
 
-                            {{else}}
+                        {{end}}
 
-                            <div class="col-sm-5 col-sm-offset-1">
-                                    <div class="news-article">
-                                        <div class="news-article__img grayscale"><a href="#"><img src="img/news/img3.png"></a></div>
-                                        <div class="news-article__content">
-                                            <div class="news-article__title">
-                                                <a href="#">{{.Title}}</a>
-                                            </div>
-                                            <div class="news-article__date">{{.Date.Format "2 January 2006"}}</div>
-                                        </div>
-                                    </div>
-                                </div>
+                    {{ end }}
 
-                            {{end}}
-
-                        {{ end }}
-
+                    
                 </div>
             </div>
         </div>
-    </div>
+        <div class="slick-dots-wrap"></div>
+    </div>    
