@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "8"
+
+cache:
+  directories:
+      - "node_modules"
+
+before_install:
+  - sudo apt update
+  - sudo apt install -y snapd
+  - sudo snap install hugo
+  - npm install firebase-tools
+
+script: 
+  - sudo snap refresh
+  - sudo snap info hugo
+  - sudo hugo
+
+after_success: 
+  - sudo chmod -R 777 ./public
+  - ./node_modules/.bin/firebase deploy --token $FIREBASE_DEPLOY_TOKEN
