@@ -1,0 +1,93 @@
+<div class="section section-wiki">
+    <div class="section-wiki__head">
+        <div class="container"><strong class="h4">Гид по блокчейну</strong>
+        </div>
+    </div>
+    <div class="section-wiki__body">
+        <div class="container">
+            <div class="module-wiki">
+
+            {{$itemCount := len .Data.Pages}}
+
+            {{ range $i, $e := .Data.Pages }}
+
+                <div id="wiki-{{ $i }}" class="module-wiki__item">
+                    <a name="wiki-{{ $i }}"></a>
+                    <a href="#wiki-{{ $i }}" class="module-wiki__head">
+                        <span class="module-wiki__headline">{{ .Title}}</span>
+                        <span class="module-wiki__description">{{ .Params.info.one }} </span>
+                    </a>
+                    <div class="module-wiki__body">
+                        <div class="grid-row">
+                            <div class="grid-column grid-column_space">
+                                <span class="module-wiki__close">
+                                    <svg class="icon icon-cross"><use xlink:href="#icon-cross"></use></svg>
+                                </span>
+                                <div class="module-footer mobile-hide">
+                                    <div class="module-share">
+                                        <!--
+                                        <div class="module-share__body">
+                                            
+                                            <div class="module-share__animate">Поделиться</div>
+                                            <span class="icon-plus icon-plus_light">
+                                                <span class="icon-plus__line"></span>
+                                            </span>
+                                            
+                                        </div>
+                                        <div class="module-share__panel">
+                                            <ul class="module-share__list">
+                                                <li><a href="#">vk</a>
+                                                </li>
+                                                <li><a href="#">fb</a>
+                                                </li>
+                                                <li><a href="#">tw</a>
+                                                </li>
+                                                <li><a href="#">ссылка</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid-column">
+                                <div class="module-content">
+                                    <p>
+                                            {{ .Params.info.two }}
+                                    </p>
+                                </div>
+                                <div class="module-footer mobile-show">
+                                    <div class="module-share">
+                                        <div class="module-share__body">
+                                            <div class="module-share__animate">Поделиться</div>
+                                            <span class="icon-plus icon-plus_light">
+                                                <span class="icon-plus__line"></span>
+                                            </span>
+                                        </div>
+                                        <div class="module-share__panel">
+                                            <ul class="module-share__list">
+                                                <li><a href="#">vk</a>
+                                                </li>
+                                                <li><a href="#">fb</a>
+                                                </li>
+                                                <li><a href="#">tw</a>
+                                                </li>
+                                                <li><a href="#">ссылка</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {{end}}
+
+
+
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,17 @@
+{{ with .Params.solution2 }}
+<div class="section section-info section_primary">
+        <div class="container">
+            <div class="grid-row">
+                <div class="grid-column">
+                    <div class="module-title"><strong class="h3">{{ .title }}</strong>
+                    </div>
+                </div>
+                <div class="grid-column">
+                    <div class="module-content">
+                        {{ .text | safeHTML }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

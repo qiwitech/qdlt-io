@@ -1,0 +1,76 @@
+<div class="section section-vacancy">
+        <div class="container">
+            <div class="section-vacancy__head">
+                <div class="grid-row">
+                    <div class="grid-column grid-column_space">
+                        <div class="module-title"><strong class="h3">Описание</strong>
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <div class="module-content">
+                            {{ .Content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-vacancy__body">
+                <div class="grid-row">
+                    <div class="grid-column">
+                        <div class="module-title"><strong class="h4">{{ .Params.info.block1 }}</strong>
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <div class="module-table">
+                            {{ with .Params.duty }}
+                            {{ range . }}
+                                <div class="module-table__row">
+                                    {{ range . }}
+                                        <div class="module-table__cell">{{ . }}</div>
+                                    {{ end }}
+                                </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-column">
+                        <div class="module-title"><strong class="h4">{{ .Params.info.block2 }}</strong>
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <div class="module-table">
+                            {{ with .Params.requirement }}
+                            {{ range . }}
+                                <div class="module-table__row">
+                                    {{ range . }}
+                                        <div class="module-table__cell">{{ . }}</div>
+                                    {{ end }}
+                                </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-row">
+                    <div class="grid-column">
+                        <div class="module-title"><strong class="h4">{{ .Params.info.block3 }}</strong>
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <div class="module-table">
+                            {{ with .Params.term }}
+                            {{ range . }}
+                                <div class="module-table__row">
+                                    {{ range . }}
+                                        <div class="module-table__cell">{{ . }}</div>
+                                    {{ end }}
+                                </div>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

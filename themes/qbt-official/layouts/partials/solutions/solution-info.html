@@ -1,0 +1,21 @@
+{{ with .Params.solution1 }}
+<div class="section section-info">
+        <div class="container">
+            <div class="grid-row">
+                <div class="grid-column grid-column_space">
+                    <div class="module-title"><strong class="h3">{{ .title }}</strong>
+                    </div>
+                    <!--
+                    <div class="module-footer"><a href="" class="link-primary">Поделиться</a>
+                    </div>
+                    -->
+                </div>
+                <div class="grid-column">
+                    <div class="module-content">
+                            {{ .text | safeHTML }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

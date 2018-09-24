@@ -1,0 +1,39 @@
+    <div class="section section-main">
+        <div class="section-main__panel">
+            <div class="container">
+                <div class="section-main__inner">
+                    <div class="grid-row">
+                        <div class="grid-column">
+                            <div class="section-main__head">
+                                <a href="/careers/" class="btn btn-inline">
+                                    <svg class="icon icon-prev">
+                                        <use xlink:href="#icon-prev"></use>
+                                    </svg>Все вакансии</a>
+                            </div>
+                        </div>
+                        <div class="grid-column grid-column_space">
+                            <div class="section-main__body">
+                                <div class="section-main__description">
+                                    <p>{{ .Title }}</p>
+                                </div>
+                                <div class="section-main__button"><a href="#feedback" class="btn btn-default">Откликнуться</a>
+                                </div>
+                            </div>
+                            <div class="section-main__footer">
+                                <ul class="list-inline">
+                                    <li>{{ .Params.info.city }}</li>
+                                    <li>{{ .Params.info.time }}</li>
+                                    <li>{{ .Params.info.exp }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-main__media">
+            <video autoplay muted plays-inline class="section-main__video">
+                <source src="/videos/figures-primary.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>

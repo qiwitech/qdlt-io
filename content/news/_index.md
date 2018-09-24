@@ -1,0 +1,4 @@
+---
+title: "Новости"
+layout: list
+---

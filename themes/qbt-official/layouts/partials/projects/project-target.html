@@ -1,0 +1,33 @@
+{{ with .Params.goal }}
+
+    <div class="section section-objective section_primary">
+        <div class="container">
+            <div class="article-default">
+                <div class="article-default__aside">
+                    <div class="module-title"><strong class="h3">
+                        {{ with .title }}
+                            {{ . | safeHTML }}
+                        {{ end }}
+                    </strong>
+                    </div>
+                </div>
+                <div class="article-default__body">
+                    <p>
+                        {{ with .text }}
+                            {{ . | safeHTML }}
+                        {{ end }}
+                    </p>
+                    <div class="module-table">
+                        {{ range .Params.goal.blocks }}
+                            <div class="module-table__row">
+                                {{ range . }}
+                                    <div class="module-table__cell">{{ . }}</div>
+                                {{ end }}
+                            </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

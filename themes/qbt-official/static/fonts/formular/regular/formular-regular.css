@@ -1,0 +1,14 @@
+/* Copyright (c) 2014-2016 by Vyacheslav Kirilenko, Gayane Bagdasaryan. All rights reserved. */
+
+@font-face {
+	font-family: 'Formular';
+	src: url('formular-regular.eot');
+	src:
+	     url('formular-regular.eot?#iefix') format('embedded-opentype'),
+	     url('formular-regular.woff2') format('woff2'),
+	     url('formular-regular.woff') format('woff'),
+	     url('formular-regular.ttf') format('truetype'),
+	     url('formular-regular.svg#Formular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

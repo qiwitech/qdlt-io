@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class="layout-404">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN9DFXT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="layout">
+
+        {{ partial "svgstore.html" . }}
+
+        {{ partial "header.html" . }}
+
+        <div class="layout-body">
+
+                {{ partial "main-404.html" . }}
+
+        </div>
+
+        {{ partial "panel.html" . }}
+
+        {{ partial "preloader.html" . }}
+
+        {{ partial "footer.html" . }}
+
+    </div>
+
+    {{ partial "js.html" . }}
+
+</body>
+</html>

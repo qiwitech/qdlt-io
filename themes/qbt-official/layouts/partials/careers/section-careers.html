@@ -1,0 +1,40 @@
+<div class="section section-careers">
+    <div class="container">
+        <div class="grid-row">
+            <div class="grid-column">
+                <div class="module-title"><strong class="h3">Вакансии</strong>
+                </div>
+            </div>
+            <div class="grid-column">
+                <div class="module-content">
+                    <p>Наши знания, опыт и экспертиза позволяют объединять революционные технологии и самые разные индустрии и отрасли. Если вы хотите работать в области блокчейн и DLT, ждём вас в нашу команду.</p>
+                </div>
+                
+                <div class="vacancies">
+                    {{ range .Data.Pages }}
+                    <a href="{{ .Permalink }}" class="vacancy-item">
+                        <div class="vacancy-item__head"><strong class="vacancy-item__title">{{ .Title}}
+<span>подробнее</span></strong>
+                        </div>
+                        <div class="vacancy-item__body">
+                            <p>{{ .Description }}</p>
+                        </div>
+                        <div class="vacancy-item__footer">
+                            <p>{{ .Params.info.city }}</p>
+                        </div>
+                    </a>
+                    {{ end }}
+
+                </div>
+        
+                <div class="module-feedback">
+                    <div class="module-feedback__body">
+                        <p>Мы рады сотрудничать с талантливыми и амбициозными специалистами в области блокчейна и разработки. Узнали себя? Напишите нам, если вы хотите работать в QBT.</p>
+                    </div>
+                    <div class="module-feedback__button"><a href="#feedback" class="btn btn-default">Написать</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

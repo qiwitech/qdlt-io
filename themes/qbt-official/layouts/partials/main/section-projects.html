@@ -1,0 +1,57 @@
+<div class="section section-projects">
+    <div class="container">
+        <div class="section-projects__head">
+            <div class="grid-row js_animate">
+                <div class="grid-column grid-column_space">
+                    <div class="module-title"><strong class="h3">Проекты</strong>
+                    </div>
+                </div>
+                <div class="grid-column">
+                    <div class="module-content">
+                        <p>Нас выбирают компании из самых разных отраслей, для каждой из которых мы находим индивидуальные решения. Блокчейн и DLT, технический консалтинг ICO, разработка продуктов и прототипов — вот лишь малая часть наших услуг, позволяющих создавать
+                            дополнительную ценность для бизнеса через технологии.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-projects__body">
+            <div class="module-info">
+                <div class="module-info__column">
+                    <svg class="icon icon-square">
+                        <use xlink:href="#icon-square"></use>
+                    </svg><a href="/projects">10+ проектов</a></div>
+            </div>
+            <div class="module-gallery">
+                <div class="module-gallery__body">
+                    <div class="slider-default slider-default_space">
+                            
+                        {{ range where .Data.Pages "Params.tag" "type1" }}
+                            <div data-headline="{{ .Title }}" class="slider-default__item">
+                                    <a href="{{ .Permalink }}"><img src="{{ .Params.info.img }}" alt=""></a>
+                            </div>
+                        {{ end }}
+                        {{ range where .Data.Pages "Params.tag" "type2" }}
+                            <div data-headline="{{ .Title }}" class="slider-default__item">
+                                    <a href="{{ .Permalink }}"><img src="{{ .Params.info.img }}" alt=""></a>
+                            </div>
+                        {{ end }}
+                        {{ range where .Data.Pages "Params.tag" "type4" }}
+                            <div data-headline="{{ .Title }}" class="slider-default__item">
+                                    <a href="{{ .Permalink }}"><img src="{{ .Params.info.img }}" alt=""></a>
+                            </div>
+                        {{ end }}
+
+                    </div>
+                </div>
+                <div class="module-gallery__footer column-reverse">
+                    <div class="module-gallery__column">
+                        <div class="module-gallery__nav"></div>
+                    </div>
+                    <div class="module-gallery__column">
+                        <div class="module-gallery__headline"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

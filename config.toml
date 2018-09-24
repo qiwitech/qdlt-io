@@ -1,0 +1,39 @@
+baseURL = "https://qdlt.io/"
+languageCode = "ru-RU"
+title = "QBT - QIWI Blockchain Technologies"
+theme = "qbt-official"
+copyright = "QBT - QIWI Blockchain Technologies"
+relativeURLs = true
+
+[author]
+    name = "QBT"
+
+[params]
+    Description = "site description placed here"
+    Author = "QBT - QIWI Blockchain Technologies"
+    Keywords = "site keywords placed here"
+    email = "info@qiwi.tech"
+    phone = "8 (495) 009-00-09"
+    address = "Москва, Шлюзовая наб., д. 4"
+    slogan_short = "Мы создаем новую цифровую среду для институтов и целых индустрий"
+    slogan_long = "Мы создаем новую цифровую среду для институтов и целых индустрий. Мы развиваем токеномику проектов компаний, разрабатывая инфраструктурные и продуктовые решения на мировом технологическом рынке."
+    slogan_long_alter = "Мы формируем новую цифровую среду для институтов и целых индустрий. Мы разрабатываем токеномику для отдельных проектов и индустриальных компаний,  создавая инфраструктурные и продуктовые решения на мировом технологическом рынке."
+    slogan_long_alter2 = "Мы формируем новую цифровую среду для институтов и целых индустрий. Мы развиваем токеномику отдельных проектов и создаем инфраструктурные и продуктовые решения на мировом технологическом рынке. "
+
+
+[[params.social]]
+  title = "Facebook"
+  url = "https://www.facebook.com/qiwitech/"
+[[params.social]]
+  title = "LinkedIn"
+  url = "https://www.linkedin.com/company/qiwi-blockchain-technologies/"
+
+[[menu.main]]
+  name = "home"
+  url = "/"
+[[menu.main]]
+  name = "Контакты"
+  url = "/contacts/"
+[[menu.main]]
+  name = "О нас"
+  url = "/about/"
