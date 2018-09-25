@@ -14,7 +14,7 @@ before_install:
   - sudo apt update
   - sudo apt install -y snapd
   - sudo snap install hugo
-  - npm install -g firebase-tools eslint
+  - npm install -g firebase-tools
 
 script: 
   - sudo snap refresh
