@@ -10,7 +10,7 @@
             e.preventDefault();
           
             var $form = $(this);
-            $.post($form.attr("action"), $form.serialize()).then(function() {
+            $.post('feedback', $form.serialize()).then(function() {
               $(".thank-you").show();
               $("#qbtform").trigger('reset')
             });
