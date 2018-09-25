@@ -6,11 +6,9 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
+    "rewrites": [{
         "source": "/feedback", "function": "feedback" 
-      }
-    ]
+      }]
   },
   "functions": {
     "predeploy": [
