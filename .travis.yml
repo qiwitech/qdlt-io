@@ -2,10 +2,6 @@ language: node_js
 node_js:
   - "8"
 
-branches:
-  only:
-  - master
-
 cache:
   directories:
       - "node_modules"
@@ -26,4 +22,4 @@ script:
 
 after_success: 
   - sudo chmod -R 777 ./public
-  - firebase deploy --token $FIREBASE_DEPLOY_TOKEN
+  - .travis/deploy.sh

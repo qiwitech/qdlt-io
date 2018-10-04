@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "qiwitech-2000"
+    "default": "qiwitech-2000",
+    "stage": "qiwi-tech-stage"
   }
 }
