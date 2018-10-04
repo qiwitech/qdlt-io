@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ "$TRAVIS_BRANCH" = "master" ]; 
-    firebase use deafult;
-    firebase deploy --token $FIREBASE_DEPLOY_TOKEN; 
+if [ "$TRAVIS_BRANCH" = "master" ]; then
+    firebase use deafult
+    firebase deploy --token $FIREBASE_DEPLOY_TOKEN
 else
-    firebase use stage;
-    firebase deploy --token $FIREBASE_STAGE_DEPLOY_TOKEN; 
+    firebase use stage
+    firebase deploy --token $FIREBASE_STAGE_DEPLOY_TOKEN
 fi
