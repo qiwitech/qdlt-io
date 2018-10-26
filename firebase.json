@@ -7,7 +7,9 @@
       "**/node_modules/**"
     ],
     "rewrites": [{
-        "source": "/feedback", "function": "feedback" 
+        "source": "/feedback", "function": "feedback"
+      },{
+        "source": "/job", "function": "job" 
       }]
   },
   "functions": {

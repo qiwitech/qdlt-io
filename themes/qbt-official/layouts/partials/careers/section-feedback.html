@@ -22,34 +22,34 @@
                                 <p>{{ .Site.Params.Phone }}</p>
                             </div>
                         </div>
-                        <form  class="form-style" name="vacancy" id="vacancy" method="POST" netlify>
+                        <form  class="form-style" name="vacancy" id="vacancy" method="POST">
                             <div class="form-style__row">
                                 <div class="form-group">
-                                    <input type="text" required class="form-control">
+                                    <input type="text" required class="form-control" name="name">
                                     <label class="form-label">Имя *</label>
                                 </div>
                             </div>
                             <div class="form-style__row">
                                 <div class="form-group">
-                                    <input type="text" required class="form-control">
+                                    <input type="text" required class="form-control" name="surname">
                                     <label class="form-label">Фамилия *</label>
                                 </div>
                             </div>
                             <div class="form-style__row">
                                 <div class="form-group">
-                                    <input type="tel" required class="form-control">
+                                    <input type="tel" required class="form-control" name="phone">
                                     <label class="form-label">Телефон *</label>
                                 </div>
                             </div>
                             <div class="form-style__row">
                                 <div class="form-group">
-                                    <input type="email" required class="form-control">
+                                    <input type="email" required class="form-control" name="email">
                                     <label class="form-label">Email *</label>
                                 </div>
                             </div>
                             <div class="form-style__row">
                                 <div class="form-group">
-                                    <textarea required class="form-control"></textarea>
+                                    <textarea required class="form-control" name="linkedin"></textarea>
                                     <label class="form-label">Профиль на LinkedIn, hh</label>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                 <div class="form-group">
                                     <div class="file-upload">
                                         <div class="file-upload__body">
-                                            <input type="text" required class="form-control">
+                                            <input type="text" required class="form-control" name="cv">
                                             <label class="form-label">Резюме *</label>
                                         </div>
                                         <div class="file-upload__panel">
@@ -70,9 +70,35 @@
                                 </div>
                             </div>
                             <div class="form-style__footer">
-                                <input type="submit" value="Отправить" class="btn btn-default">
+                                <input type="submit" value="Отправить" class="btn btn-default" id="career_submit">
                             </div>
                         </form>
+                    </div>
+
+                    <div class="grid-row grid-row_end">
+                        <div class="grid-column">
+                            <div class="thank-you thank-you__text" id="cvsent">
+                                <div class="thank-you__head">
+                                    <p>Мы получили ваши данные и свяжемся с вами как можно раньше. Спасибо!</p>
+                                </div>
+                                <div class="thank-you__body">
+                                    <p>Мы отправили копию обращения на ваш email.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="grid-row grid-row_end">
+                        <div class="grid-column">
+                            <div class="thank-you thank-you__text" id="cverror">
+                                <div class="thank-you__head">
+                                    <p>Данные не были отправлены. Попробуйте повторить попытку позже.</p>
+                                </div>
+                                <div class="thank-you__body">
+                                    <p>Видимо что-то пошло не так и не мы не смогли отправить ваши данные.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

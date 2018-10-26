@@ -11,8 +11,26 @@
 
             var $form = $(this);
             $.post('/feedback', $form.serialize()).then(function() {
-              $(".thank-you").show();
-              $("#qbtform").prop('disabled', true)
+              $("#qbtform").hide()
+              $("#qbtform").trigger('reset')
+              $("#formsent").show();
+            }).catch(function(){
+              $("#qbtform").trigger('reset')
+              $("#formerror").show();
+            });
+          });
+
+          $("#vacancy").submit(function(e) {
+            e.preventDefault();
+
+            var $form = $(this);
+            $.post('/job', $form.serialize()).then(function() {
+              $("#vacancy").hide()
+              $("#vacancy").trigger('reset')
+              $("#cvsent").show(); 
+            }).catch(function(){
+              $("#vacancy").trigger('reset')
+              $("#cverror").show();
             });
           });
 </script>
