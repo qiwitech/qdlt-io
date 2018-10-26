@@ -5,14 +5,14 @@
 <script src="/scripts/plugins/in-view/in-view.min.js"></script>
 <script src="/scripts/interface.js"></script>
 
-<Script>
+<script>
         $("#qbtform").submit(function(e) {
             e.preventDefault();
-          
+
             var $form = $(this);
-            $.post('feedback', $form.serialize()).then(function() {
+            $.post('/feedback', $form.serialize()).then(function() {
               $(".thank-you").show();
-              $("#qbtform").trigger('reset')
+              $("#qbtform").prop('disabled', true)
             });
           });
-</Script>
+</script>

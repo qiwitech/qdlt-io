@@ -13,17 +13,13 @@ function postToSlack(payload) {
     method: 'POST',
     uri: 'https://hooks.slack.com/services/' + functions.config().qdlt.slack,
     body: {
+      username: "Qiwi Tech Message Bot",
+      icon_emoji: ":mailbox_with_mail:",
       attachments: [
         {
-            fallback: "Feedback form from https://qiwi.tech",
-            "color": "#039BE5",
-            pretext: "Feedback form from https://qiwi.tech",
-            author_name: "Qiwi Tech Feedback From",
-            author_link: "https://qiwi.tech",
-            author_icon: "https://qiwi.tech/images/favicon-96x96.png",
-            title: "Qiwi Tech Feedback",
-            title_link: "https://qiwi.tech/",
-            text: "User sent following message",
+            fallback: "Qiwi Tech Feedback Form",
+            "color": "#FF8200",
+            title: "User sent following message",
             fields: [
                 {
                     title: "Name",
