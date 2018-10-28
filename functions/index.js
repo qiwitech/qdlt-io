@@ -84,12 +84,7 @@ function getSlackCareerPayload(payload) {
                   short: false
                 },
                 {
-                  title: "Linkedin",
-                  value: payload.linkedin,
-                  short: false
-                },
-                {
-                  title: "CV",
+                  title: "CV Link",
                   value: payload.cv,
                   short: false
                 }
@@ -110,7 +105,19 @@ function getMailCareerPayload(payload) {
       from: 'Qiwi Tech Feedback Bot <info@qiwi.tech>',
       to: payload.email,
       subject: 'Спасибо, мы получили вашу информацию',
-      html: "<html><body><p>Привет,</p><p>Мы полчили от вас такую информацию:</p><ul><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>LinkedIn:</b> " + payload.linkedin + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR отел. Мы с вами обязательно свяжемся.</p><p>Спасибо!</p></body></html>"
+      html: "<html><body><p>Привет,</p><p>Мы полчили от вас такую информацию:</p><ul><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR отел. Мы с вами обязательно свяжемся.</p><p>Спасибо!</p></body></html>"
+    }
+  }
+  return undefined;
+}
+
+function getMailFeedbackPayload(payload) {
+  if(payload.email !== undefined) {
+    return {
+      from: 'Qiwi Tech Feedback Bot <info@qiwi.tech>',
+      to: payload.email,
+      subject: 'Спасибо, мы получили ваше сообщение',
+      html: "<html><body><p>Привет,</p><p>Мы полчили от вас такое сообщение:</p><ul><li><b>Имя:</b> " + payload.name + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Компания:</b> " + payload.company + "</li><li><b>Сообщение:</b> " + payload.message + "</li></ul><p>Мы с вами обязательно свяжемся как можно скорее.</p><p>Спасибо!</p></body></html>"
     }
   }
   return undefined;
@@ -128,6 +135,9 @@ exports.feedback = functions.https.onRequest((req, res) => {
   return cors(req, res, async () => {
     try {
       await rp(getSlackFeedbackPayload(req.body));
+      mailgun.messages().send(getMailFeedbackPayload(req.body), (error, body) => {
+        console.log(body);
+      });
       return res.status(200).send('OK');
     } catch(error) {
       console.error(error);
@@ -148,7 +158,9 @@ exports.job = functions.https.onRequest((req, res) => {
   return cors(req, res, async () => {
     try {
       await rp(getSlackCareerPayload(req.body));
-      await mailgun.messages().send(getMailCareerPayload(req.body));
+      mailgun.messages().send(getMailCareerPayload(req.body), (error, body) => {
+        console.log(body);
+      });
       return res.status(200).send('OK');
     } catch(error) {
       console.error(error);
