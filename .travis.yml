@@ -26,4 +26,5 @@ script:
 
 after_success: 
   - sudo chmod -R 777 ./public
+  - firebase use default
   - firebase deploy --token $FIREBASE_DEPLOY_TOKEN
