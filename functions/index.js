@@ -1,14 +1,17 @@
 'use strict';
 
 const functions = require('firebase-functions');
-const util = require('util');
+const rp = require('request-promise');
+const mailgun = require('mailgun-js')({
+  apiKey: functions.config().qdlt.mailgun, 
+  domain: "qiwi.tech"
+});
 const cors = require('cors')({
   origin: 'https://qiwi.tech',
   optionsSuccessStatus: 200
 });
-const rp = require('request-promise');
 
-function getFeedbackPayload(payload) {
+function getSlackFeedbackPayload(payload) {
   return {
     method: 'POST',
     uri: 'https://hooks.slack.com/services/' + functions.config().qdlt.slack,
@@ -52,10 +55,10 @@ function getFeedbackPayload(payload) {
   };
 }
 
-function getCareerPayload(payload) {
+function getSlackCareerPayload(payload) {
   return {
     method: 'POST',
-    uri: 'https://hooks.slack.com/services/' + functions.config().qdlt.slack,
+    uri: 'https://hooks.slack.com/services/' + functions.config().qdlt.career,
     body: {
       username: "Qiwi Tech Message Bot",
       icon_emoji: ":bust_in_silhouette:",
@@ -101,8 +104,16 @@ function getCareerPayload(payload) {
   };
 }
 
-function postToSlack(payload) {
-  return rp(payload);
+function getMailCareerPayload(payload) {
+  if(payload.email !== undefined) {
+    return {
+      from: 'Qiwi Tech Feedback Bot <info@qiwi.tech>',
+      to: payload.email,
+      subject: 'Спасибо, мы получили вашу информацию',
+      html: "<html><body><p>Привет,</p><p>Мы полчили от вас такую информацию:</p><ul><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>LinkedIn:</b> " + payload.linkedin + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR отел. Они с вами обязательно свяжутся.</p><p>Спасибо!</p></body></html>"
+    }
+  }
+  return undefined;
 }
 
 exports.feedback = functions.https.onRequest((req, res) => {
@@ -116,7 +127,7 @@ exports.feedback = functions.https.onRequest((req, res) => {
 
   return cors(req, res, async () => {
     try {
-      await postToSlack(getFeedbackPayload(req.body));
+      await rp(getSlackFeedbackPayload(req.body));
       return res.status(200).send('OK');
     } catch(error) {
       console.error(error);
@@ -136,7 +147,8 @@ exports.job = functions.https.onRequest((req, res) => {
 
   return cors(req, res, async () => {
     try {
-      await postToSlack(getCareerPayload(req.body));
+      await rp(getSlackCareerPayload(req.body));
+      await mailgun.messages().send(getMailCareerPayload(re.body));
       return res.status(200).send('OK');
     } catch(error) {
       console.error(error);
