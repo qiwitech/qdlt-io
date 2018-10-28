@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/qiwitech/qdlt-io.svg?branch=master)](https://travis-ci.org/qiwitech/qdlt-io)
+
 # QIWI Blockchain Technology Homepage
 
 QBT official web site powered by HUGO
@@ -5,17 +7,16 @@ QBT official web site powered by HUGO
 ## Getting Started
 
 1. Clone the repo
-2. open terminal, go to repo directory
-3. type and run: hugo server -D
+2. Open terminal, go to repo directory
+3. type and run: `hugo server -D`
 
-### Prerequisites
+## Prerequisites
 
 Hugo Static Site Generator v0.40.2
 
+## Deployment
 
-## Contributing
-
-## Authors
+The sources are ready to be deployed to Google Firebase
 
 ## License
 
