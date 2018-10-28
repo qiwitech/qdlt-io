@@ -15,6 +15,7 @@
               $("#qbtform").trigger('reset')
               $("#formsent").show();
             }).catch(function(){
+              $("#qbtform").hide()
               $("#qbtform").trigger('reset')
               $("#formerror").show();
             });
@@ -29,6 +30,7 @@
               $("#vacancy").trigger('reset')
               $("#cvsent").show(); 
             }).catch(function(){
+              $("#vacancy").hide()
               $("#vacancy").trigger('reset')
               $("#cverror").show();
             });

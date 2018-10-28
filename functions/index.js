@@ -110,7 +110,7 @@ function getMailCareerPayload(payload) {
       from: 'Qiwi Tech Feedback Bot <info@qiwi.tech>',
       to: payload.email,
       subject: 'Спасибо, мы получили вашу информацию',
-      html: "<html><body><p>Привет,</p><p>Мы полчили от вас такую информацию:</p><ul><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>LinkedIn:</b> " + payload.linkedin + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR отел. Они с вами обязательно свяжутся.</p><p>Спасибо!</p></body></html>"
+      html: "<html><body><p>Привет,</p><p>Мы полчили от вас такую информацию:</p><ul><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>LinkedIn:</b> " + payload.linkedin + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR отел. Мы с вами обязательно свяжемся.</p><p>Спасибо!</p></body></html>"
     }
   }
   return undefined;
@@ -148,7 +148,7 @@ exports.job = functions.https.onRequest((req, res) => {
   return cors(req, res, async () => {
     try {
       await rp(getSlackCareerPayload(req.body));
-      await mailgun.messages().send(getMailCareerPayload(re.body));
+      await mailgun.messages().send(getMailCareerPayload(req.body));
       return res.status(200).send('OK');
     } catch(error) {
       console.error(error);
