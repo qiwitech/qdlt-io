@@ -989,6 +989,10 @@ template {
   font-size: 20px;
 }
 
+.grecaptcha-badge {
+  display: none;
+}
+
 textarea {
   overflow-x: hidden;
   height: 57px;

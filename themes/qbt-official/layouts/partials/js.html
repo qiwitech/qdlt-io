@@ -8,31 +8,47 @@
 <script>
         $("#qbtform").submit(function(e) {
             e.preventDefault();
-
             var $form = $(this);
-            $.post('/feedback', $form.serialize()).then(function() {
-              $("#qbtform").hide()
-              $("#qbtform").trigger('reset')
-              $("#formsent").show();
-            }).catch(function(){
-              $("#qbtform").hide()
-              $("#qbtform").trigger('reset')
-              $("#formerror").show();
+
+            grecaptcha.ready(function() {
+              grecaptcha.execute('6LeFd3cUAAAAANtduyNbVRyrz4q18FzoiDWfdFWQ', {action: 'feedback'})
+              .then(function(token) {
+                var data = $form.serializeArray();
+                data.push({name: "gtoken", value: token});
+                $.post('/feedback', $.param(data))
+                .then(function() {
+                  $("#qbtform").hide()
+                  $("#qbtform").trigger('reset')
+                  $("#formsent").show();
+                }).catch(function(){
+                  $("#qbtform").hide()
+                  $("#qbtform").trigger('reset')
+                  $("#formerror").show();
+                });
+              });
             });
           });
 
           $("#vacancy").submit(function(e) {
             e.preventDefault();
-
             var $form = $(this);
-            $.post('/job', $form.serialize()).then(function() {
-              $("#vacancy").hide()
-              $("#vacancy").trigger('reset')
-              $("#cvsent").show(); 
-            }).catch(function(){
-              $("#vacancy").hide()
-              $("#vacancy").trigger('reset')
-              $("#cverror").show();
+
+            grecaptcha.ready(function() {
+              grecaptcha.execute('6LeFd3cUAAAAANtduyNbVRyrz4q18FzoiDWfdFWQ', {action: 'career'})
+              .then(function(token) {
+                var data = $form.serializeArray();
+                data.push({name: "gtoken", value: token});
+                $.post('/job', $.param(data))
+                .then(function() {
+                  $("#vacancy").hide()
+                  $("#vacancy").trigger('reset')
+                  $("#cvsent").show(); 
+                }).catch(function(){
+                  $("#vacancy").hide()
+                  $("#vacancy").trigger('reset')
+                  $("#cverror").show();
+                });
+              });
             });
           });
 </script>
