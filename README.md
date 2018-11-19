@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/qiwitech/qdlt-io.svg?branch=master)](https://travis-ci.org/qiwitech/qdlt-io)
 
-# QIWI Blockchain Technology Homepage
+# QIWI Blockchain Technologies Homepage
 
 QBT official web site powered by HUGO
 
