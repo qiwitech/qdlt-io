@@ -51,7 +51,17 @@ function getSlackFeedbackPayload(payload) {
   };
 }
 
-function getSlackCareerPayload(payload) {
+function getJobFromDocument(req) {
+  var job = "";
+  req.headers.referer !== undefined &&
+  req.headers.referer.split('/')[4] !== undefined ? 
+    job = req.headers.referer.split('/')[4] : 
+    job = "";
+
+  return job
+}
+
+function getSlackCareerPayload(payload, req) {
   return {
     method: 'POST',
     uri: 'https://hooks.slack.com/services/' + functions.config().qdlt.career,
@@ -64,6 +74,11 @@ function getSlackCareerPayload(payload) {
             "color": "#FF8200",
             title: "User sent following message",
             fields: [
+                {
+                  title: "JOB",
+                  value: getJobFromDocument(req),
+                  short: false
+                },
                 {
                     title: "Name",
                     value: payload.name + " " + payload.surname,
@@ -95,13 +110,13 @@ function getSlackCareerPayload(payload) {
   };
 }
 
-function getMailCareerPayload(payload) {
+function getMailCareerPayload(payload, req) {
   if(payload.email !== undefined) {
     return {
       from: 'Qiwi Tech Message Bot <info@qiwi.tech>',
       to: [payload.email, "hr@qiwi.tech"],
       subject: 'Спасибо, мы получили вашу информацию',
-      html: "<html><body><p>Привет,</p><p>Мы получили от вас такую информацию:</p><ul><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR. Мы с вами обязательно свяжемся.</p><p>Спасибо!</p></body></html>"
+      html: "<html><body><p>Привет,</p><p>Мы получили от вас такую информацию:</p><ul><li><b>Вакансия:</b> " + getJobFromDocument(req) + "</li><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR. Мы с вами обязательно свяжемся.</p><p>Спасибо!</p></body></html>"
     }
   }
   return undefined;
@@ -172,8 +187,8 @@ exports.job = functions.https.onRequest((req, res) => {
     }
 
     try {
-      await rp(getSlackCareerPayload(req.body));
-      mailgun.messages().send(getMailCareerPayload(req.body), (error, body) => {
+      await rp(getSlackCareerPayload(req.body, req));
+      mailgun.messages().send(getMailCareerPayload(req.body, req), (error, body) => {
         console.log(body);
       });
       return res.status(200).send('OK');
