@@ -51,7 +51,7 @@ function getSlackFeedbackPayload(payload) {
   };
 }
 
-function getJobFromDocument(req) {
+function getJobFromReq(req) {
   var job = "";
   req.headers.referer !== undefined &&
   req.headers.referer.split('/')[4] !== undefined ? 
@@ -76,7 +76,7 @@ function getSlackCareerPayload(payload, req) {
             fields: [
                 {
                   title: "JOB",
-                  value: getJobFromDocument(req),
+                  value: getJobFromReq(req),
                   short: false
                 },
                 {
@@ -116,7 +116,7 @@ function getMailCareerPayload(payload, req) {
       from: 'Qiwi Tech Message Bot <info@qiwi.tech>',
       to: [payload.email, "hr@qiwi.tech"],
       subject: 'Спасибо, мы получили вашу информацию',
-      html: "<html><body><p>Привет,</p><p>Мы получили от вас такую информацию:</p><ul><li><b>Вакансия:</b> " + getJobFromDocument(req) + "</li><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR. Мы с вами обязательно свяжемся.</p><p>Спасибо!</p></body></html>"
+      html: "<html><body><p>Привет,</p><p>Мы получили от вас такую информацию:</p><ul><li><b>Вакансия:</b> " + getJobFromReq(req) + "</li><li><b>ФИО:</b> " + payload.name + " " + payload.surname + "</li><li><b>Email:</b> " + payload.email + "</li><li><b>Телефон:</b> " + payload.phone + "</li><li><b>CV Link:</b> " + payload.cv + "</li></ul><p>И передали её в HR. Мы с вами обязательно свяжемся.</p><p>Спасибо!</p></body></html>"
     }
   }
   return undefined;
