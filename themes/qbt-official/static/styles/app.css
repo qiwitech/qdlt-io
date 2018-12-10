@@ -557,15 +557,32 @@ template {
   background-color: #fff;
 }
 
+.layout-primary .burger__item {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 30px;
+  height: 2px;
+  -webkit-transition: margin-left .3s linear;
+  transition: margin-left .3s linear;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background-color: #000;
+}
+
 .layout-primary .burger:after,
 .layout-primary .burger:before {
   background-color: #000;
 }
 
+/*
 .no-touchevents .layout-primary .burger:hover:after,
 .no-touchevents .layout-primary .burger:hover:before {
   background-color: #ff8c00;
 }
+*/
 
 .main-menu__item {
   margin: 0 20px;
