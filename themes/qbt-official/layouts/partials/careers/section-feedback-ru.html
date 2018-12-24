@@ -1,0 +1,90 @@
+<div class="section section-feedback">
+    <a name="feedback"></a>
+        <div class="container">
+            <div class="section-feedback__inner">
+                <div class="grid-row">
+                    <div class="grid-column grid-column_space"><strong class="h3">Откликнуться</strong>
+                        <div class="section-feedback__description">
+                            <p>Мы формируем новую цифровую среду для институтов и целых индустрий. Мы развиваем токеномику отдельных проектов и создаем инфраструктурные и продуктовые решения на мировом технологическом рынке.</p>
+                        </div>
+                    </div>
+                    <div class="grid-column">
+                        <div class="module-info">
+                            <div class="module-info__column">
+                                <p>
+                                    <a href="mailto:info@qiwi.tech">
+                                        <svg class="icon icon-square">
+                                            <use xlink:href="#icon-square"></use>
+                                        </svg>info@qiwi.tech</a>
+                                </p>
+                            </div>
+                            <div class="module-info__column">
+                                <p>{{ .Site.Params.Phone }}</p>
+                            </div>
+                        </div>
+                        <form  class="form-style" name="vacancy" id="vacancy" method="POST">
+                            <div class="form-style__row">
+                                <div class="form-group">
+                                    <input type="text" required class="form-control" name="name">
+                                    <label class="form-label">Имя *</label>
+                                </div>
+                            </div>
+                            <div class="form-style__row">
+                                <div class="form-group">
+                                    <input type="text" required class="form-control" name="surname">
+                                    <label class="form-label">Фамилия *</label>
+                                </div>
+                            </div>
+                            <div class="form-style__row">
+                                <div class="form-group">
+                                    <input type="tel" required class="form-control" name="phone">
+                                    <label class="form-label">Телефон *</label>
+                                </div>
+                            </div>
+                            <div class="form-style__row">
+                                <div class="form-group">
+                                    <input type="email" required class="form-control" name="email">
+                                    <label class="form-label">Email *</label>
+                                </div>
+                            </div>
+                            <div class="form-style__row">
+                                <div class="form-group">
+                                    <!-- <div class="file-upload"> -->
+                                        <!-- <div class="file-upload__body"> -->
+                                    <input type="text" required class="form-control" name="cv">
+                                    <label class="form-label">Ссылка на резюме, профиль LinkedIn или hh.ru *</label>
+                                        <!-- </div> -->
+                                        <!-- <div class="file-upload__panel">
+                                            <div class="file-upload__group"><span class="file-upload__link js_file-link">вставить cсылкой</span>
+                                                <label for="upload-control" class="file-upload__link js_file-upload">прикрепить файл</label>
+                                                <input type="file" id="upload-control" class="form-file">
+                                            </div><span class="file-upload__clear js_file-clear">Удалить</span>
+                                        </div> -->
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                            <div class="form-style__footer">
+                                <input type="submit" value="Отправить" class="btn btn-default" id="career_submit" data-sitekey="6LeFd3cUAAAAANtduyNbVRyrz4q18FzoiDWfdFWQ" data-badge="inline">
+                            </div>
+                        </form>
+                        <div class="thank-you thank-you__text" id="cvsent">
+                            <div class="thank-you__head">
+                                <p>Мы получили ваши данные и свяжемся с вами как можно раньше. Спасибо!</p>
+                            </div>
+                            <div class="thank-you__body">
+                                <p>Мы отправили копию обращения на ваш email.</p>
+                            </div>
+                        </div>
+                        <div class="thank-you thank-you__text" id="cverror">
+                            <div class="thank-you__head">
+                                <p>Данные не были отправлены. Попробуйте повторить попытку позже.</p>
+                            </div>
+                            <div class="thank-you__body">
+                                <p>Видимо что-то пошло не так и не мы не смогли отправить ваши данные.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

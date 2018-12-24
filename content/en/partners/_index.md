@@ -1,0 +1,4 @@
+---
+title: "Partners"
+layout: single
+---

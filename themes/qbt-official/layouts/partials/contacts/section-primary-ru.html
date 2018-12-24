@@ -1,0 +1,44 @@
+<div class="section section_primary">
+    <div class="container">
+        <div class="grid-row js_animate">
+            <div class="grid-column">
+                <div class="module-title"><strong class="h3">Контакты</strong>
+                </div>
+            </div>
+            <div class="grid-column">
+                <div class="module-details">
+                    <div class="module-details__item"><strong class="module-details__headline">Партнерам</strong>
+                        <div class="module-details__description">
+                            <p><a href="mailto:partners@qiwitech.com">partners@qiwi.tech</a>
+                            </p>
+                            <p>{{ .Site.Params.phone }}</p>
+                        </div>
+                    </div>
+                    <div class="module-details__item"><strong class="module-details__headline">HR</strong>
+                        <div class="module-details__description">
+                            <p><a href="mailto:careers@qiwitech.com">careers@qiwi.tech</a>
+                            </p>
+                            <p>{{ .Site.Params.phone }}</p>
+                        </div>
+                    </div>
+                    <div class="module-details__item"><strong class="module-details__headline">Соцсети</strong>
+                        <div class="module-details__description">
+                            {{ range .Site.Params.social }}
+                                <p>
+                                    <a href="{{ .url}}" target="_blank">{{ .title }}</a>
+                                </p>
+                            {{ end }}
+                        </div>
+                    </div>
+                    <div class="module-details__item"><strong class="module-details__headline">Пресса</strong>
+                        <div class="module-details__description">
+                            <p><a href="mailto:press@qiwitech.com">press@qiwi.tech</a>
+                            </p>
+                            <p>{{ .Site.Params.phone }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="section section-project">
+        <div class="container">
+            <div class="article-default">
+                <div class="article-default__aside">
+                    <div class="module-title"><strong class="h3">
+                        {{ with .Params.about.title }}
+                            {{ . | safeHTML }}
+                        {{ end }}
+                    </strong>
+                    </div>
+                </div>
+                <div class="article-default__body">
+                        <p>
+                            {{ with .Params.about.text }}
+                                {{ . | safeHTML }}
+                            {{ end }}
+                        </p>
+                    <table>
+                            {{ with .Params.about.year }}
+                        <tr>
+                            <td>Год запуска</td>
+                            <td>{{ . }}</td>
+                        </tr>
+                        {{ end }}
+                        <tr>
+                                {{ with .Params.about.client }}
+                            <td>Клиент</td>
+                            <td>{{ . }}</td>
+                        </tr>
+                        {{ end }}
+                        <tr>
+                                {{ with .Params.about.industry }}
+                            <td>Отрасль</td>
+                            <td>{{ . }}</td>
+                        </tr>
+                        {{ end }}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

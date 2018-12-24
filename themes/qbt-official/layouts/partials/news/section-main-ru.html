@@ -1,0 +1,68 @@
+<div class="section section-news-list">
+    <div class="container">
+        <div class="grid-row">
+            <div class="grid-column">
+                <div class="module-title"><strong class="h3">{{ .Title }}</strong>
+                </div>
+            </div>
+            <div class="grid-column">
+                <div class="list-primary">
+
+                        {{ range .Data.Pages.ByDate.Reverse }}
+
+                        <div class="list-primary__item js_animate">
+                            <div class="article-success">
+                                <div class="article-success__head"><a href="{{ .Permalink }}" class="artile-success__title"> {{ .Title}}
+        <span>подробнее</span></a>
+                                </div>
+                                <div class="article-success__footer">
+                                    <time datetime="2017-12-08">{{.Date.Format "02.01.06"}}</time>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{ end }}
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="module-pagination">
+            <div class="module-pagination__row">
+                <div class="module-pagination__column">
+                    <div class="nav-arrows">
+                        <a href="#" class="nav-arrows__link">
+                            <svg class="icon icon-prev">
+                                <use xlink:href="#icon-prev"></use>
+                            </svg>
+                        </a>
+                        <a href="#" class="nav-arrows__link">
+                            <svg class="icon icon-next">
+                                <use xlink:href="#icon-next"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="module-pagination__column">
+                    <ul class="pagination">
+                        <li class="pagination__item"><a href="#" class="pagination__link active">1</a>
+                        </li>
+                        <li class="pagination__item"><a href="#" class="pagination__link">2</a>
+                        </li>
+                        <li class="pagination__item"><a href="#" class="pagination__link">3</a>
+                        </li>
+                        <li class="pagination__item"><span class="pagination__dots">...</span>
+                        </li>
+                        <li class="pagination__item"><a href="#" class="pagination__link">9</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        -->
+    </div>
+</div>

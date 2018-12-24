@@ -1,0 +1,30 @@
+    <div class="section section-news">
+        <div class="container">
+            <div class="article-default js_animate">
+                <article class="article-default__body">
+                    {{ .Content }}
+                </article>
+                <aside class="article-default__aside">
+                        <div class="module-share">
+                            <div class="module-share__body">
+                                <div class="module-share__animate">Поделиться</div><span class="icon-plus icon-plus_light"><span class="icon-plus__line"></span></span>
+                            </div>
+                            <div class="module-share__panel">
+                                <ul class="module-share__list">
+                                    <!--
+                                    <li><a href="#">vk</a>
+                                    </li>
+                                    <li><a href="#">fb</a>
+                                    </li>
+                                    <li><a href="#">tw</a>
+                                    </li>
+                                    -->
+                                    <li><a href="{{ .Permalink }}">ссылка</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+            </div>
+        </div>
+    </div>  

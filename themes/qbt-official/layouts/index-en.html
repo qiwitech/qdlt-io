@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class="layout-home">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN9DFXT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="layout">
+
+        {{ partial "svgstore.html" . }}
+
+        {{ partial "header.html" . }}
+
+        <div class="layout-body">
+
+                {{ partial "main/section-main.html" . }}
+
+                {{ partial "main/section-about.html" . }}
+
+                {{ partial "main/section-services.html" . }}
+
+                {{ partial "main/section-audit.html" . }}
+
+                {{ partial "main/section-projects.html" . }}
+
+                {{ partial "general/section-feedback.html" . }}
+
+        </div>
+
+        {{ partial "panel.html" . }}
+
+        {{ partial "preloader.html" . }}
+
+        {{ partial "footer.html" . }}
+
+    </div>
+
+    {{ partial "js.html" . }}
+
+</body>
+</html>

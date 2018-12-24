@@ -1,0 +1,27 @@
+<div class="section section-main">
+        <div class="section-main__panel">
+            <div class="container">
+                <div class="section-main__inner">
+                    <div class="grid-row">
+                        <div class="grid-column">
+                            <div class="section-main__head"><a href="/ru/news/" class="btn btn-inline">Все новости</a>
+                            </div>
+                        </div>
+                        <div class="grid-column grid-column_space">
+                            <div class="section-main__body">
+                                <div class="section-main__description">
+                                    <p>{{ .Title}}</p>
+                                </div>
+                            </div>
+                            <div class="section-main__footer">
+                                <ul class="list-inline">
+                                    <li>{{.Date.Format "02.01.06"}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-image: url(/images/background/figures-light.jpg)" class="section-main__media"></div>
+    </div>

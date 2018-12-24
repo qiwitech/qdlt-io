@@ -1,0 +1,27 @@
+    <div class="section section-read">
+        <div class="container">
+            <div class="grid-row">
+                <div class="grid-column grid-column_space">
+                    <div class="module-title"><strong class="h3">Читайте также</strong>
+                    </div>
+                    <div class="module-footer mobile-hide"><a href="/ru/news/" class="btn btn-primary">все новости<span class="icon-plus icon-plus_info"><span class="icon-plus__line"></span></span></a>
+                    </div>
+                </div>
+                <div class="grid-column">
+                    <div class="module-articles">
+                        {{ with .PrevInSection }}
+                        <article class="article-item js_animate"><a href="{{ .Permalink }}" class="article-item__headline">{{ .Title }}</a>
+                            <time datetime="2017-11-17" class="article-item__date">{{.Date.Format "02.01.06"}}</time>
+                        </article>
+                        {{ end }}
+                        {{ with .NextInSection }}
+                        <article class="article-item js_animate"><a href="{{ .Permalink }}" class="article-item__headline">{{ .Title }}</a>
+                            <time datetime="2017-11-17" class="article-item__date">{{.Date.Format "02.01.06"}}</time>
+                        </article>
+                        {{ end }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

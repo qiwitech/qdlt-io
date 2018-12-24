@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN9DFXT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="layout">
+
+        {{ partial "svgstore.html" . }}
+
+        {{ partial "header-ru.html" . }}
+
+        <div class="layout-body">
+
+            {{ partial "careers/vacancy-main-ru.html" . }}
+
+            {{ partial "careers/vacancy-text-ru.html" . }}
+
+            {{ partial "careers/section-feedback-ru.html" . }}
+
+        </div>
+
+        {{ partial "panel-ru.html" . }}
+
+        {{ partial "preloader.html" . }}
+
+        {{ partial "footer-ru.html" . }}
+
+    </div>
+
+    {{ partial "js.html" . }}
+</body>
+</html>

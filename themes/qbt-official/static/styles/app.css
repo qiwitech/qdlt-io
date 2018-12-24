@@ -572,17 +572,16 @@ template {
   background-color: #000;
 }
 
+
 .layout-primary .burger:after,
 .layout-primary .burger:before {
   background-color: #000;
 }
 
-/*
 .no-touchevents .layout-primary .burger:hover:after,
 .no-touchevents .layout-primary .burger:hover:before {
   background-color: #ff8c00;
 }
-*/
 
 .main-menu__item {
   margin: 0 20px;

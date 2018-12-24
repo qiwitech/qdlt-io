@@ -1,0 +1,4 @@
+---
+title: "Решения"
+layout: list
+---

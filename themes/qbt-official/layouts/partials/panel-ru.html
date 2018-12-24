@@ -1,0 +1,81 @@
+<div class="layout-panel">
+        <div class="layout-panel__wrapper">
+            <div class="layout-panel__inner">
+                <div class="layout-panel__body">
+                    <div class="menu-success">
+                        <div class="menu-success__panel">
+                            <div class="menu-success__preview"></div>
+                        </div>
+                        <ul class="menu-success__links">
+                            <li class="menu-success__item"><a href="/ru"  class="menu-success__link">Главная</a>
+                            </li>
+                            <li class="menu-success__item"><a href="/ru/about/"  class="menu-success__link">О компании</a>
+                            </li>
+                            <li class="menu-success__item"><a href="/ru/services/"  class="menu-success__link">Услуги</a>
+                            </li>
+                            <li class="menu-success__item"><a href="/ru/projects/"  class="menu-success__link">Проекты</a>
+                            </li>
+                            <li class="menu-success__item"><a href="/ru/partners/"  class="menu-success__link">Партнеры</a>
+                            </li>
+                            <li class="menu-success__item"><a href="/ru/news/"  class="menu-success__link">Новости</a>
+                            </li>
+                            <!--
+                            <li class="menu-success__item"><a href="/team/"  class="menu-success__link">Команда</a>
+                            </li>
+                            
+                            <li class="menu-success__item"><a href="/wiki/" class="menu-success__link">Гид по блокчейну</a>
+                            </li>
+                            -->
+                            <li class="menu-success__item"><a href="/ru/contacts/"  class="menu-success__link">Контакты</a>
+                            </li>
+                            <br>
+                            <br>
+                            <li class="menu-success__item"><a href="/en"  class="menu-success__link">English</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="layout-panel__background"></div>
+                </div>
+                <div class="layout-panel__footer">
+                    <div class="grid-row">
+                        <div class="grid-column">
+                             <div class="layout-panel__contacts">
+                                <p>
+                                    <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+                                </p>
+                                <p>{{ .Site.Params.phone }}</p>
+                                <p>{{ .Site.Params.address }}</p>
+                            </div>
+                        </div>
+                        <div class="grid-column">
+                            <div class="footer-links">
+                                <ul class="footer-menu">
+                                    <li class="footer-menu__item">
+                                        <a href="/ru/careers" class="footer-menu__link">Вакансии — 5</a>
+                                    </li>
+                                    <li class="footer-menu__item">
+                                        <a href="/wiki" class="footer-menu__link">Гид по блокчейну</a>
+                                    </li>
+                                </ul>
+                                <ul class="footer-menu">
+                                    {{ range .Site.Params.social }}
+                                        <li class="footer-menu__item">
+                                            <a href="{{ .url}}" target="_blank" class="footer-menu__link">{{ .title }}</a>
+                                        </li>
+                                    {{ end }}
+                                </ul>
+                                <ul class="footer-menu">
+                                    <!--<li class="footer-menu__item">
+                                        <a href="/en/" class="footer-menu__link">english</a>-->
+                                    </li>
+                                    <li class="footer-menu__item">
+                                        <a href="/ru/legal" class="footer-menu__link">Юридическая информация</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
