@@ -1,4 +1,0 @@
----
-title: "Команда"
-layout: single
----

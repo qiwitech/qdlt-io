@@ -1,4 +1,0 @@
----
-title: "Партнеры"
-layout: single
----

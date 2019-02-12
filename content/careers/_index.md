@@ -1,4 +1,0 @@
----
-title: "Карьера"
-layout: list
----

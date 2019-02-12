@@ -1,4 +1,0 @@
----
-title: "Услуги"
-layout: single
----

@@ -1,4 +1,0 @@
----
-title: "Проекты"
-layout: list
----
