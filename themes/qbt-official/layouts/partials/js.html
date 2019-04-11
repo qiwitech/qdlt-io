@@ -1,3 +1,24 @@
+<script>
+  (function() {
+    const { protocol, host, pathname } = location;
+    console.log(pathname);
+
+    let lang = 'en';
+
+    if ('language' in navigator) {
+      lang = navigator.language;
+    } else if ('userLanguage' in navigator) {
+      lang = navigator.userLanguage;
+    }
+
+    if (['ru', 'ru-RU'].includes(lang)) {
+      const url = `${protocol}\/\/${host}\/ru${pathname}`;
+      // location.replace(url);
+    }
+  })()
+</script>
+
+
 
 <script src="/scripts/jquery/jquery-3.3.1.min.js"></script>
 <script src="/scripts/plugins/slick/slick.min.js"></script>
