@@ -1,4 +1,4 @@
 ---
 title: "Решения"
-layout: list
+layout: list-ru
 ---

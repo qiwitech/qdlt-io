@@ -4456,6 +4456,41 @@ input {
   display: none;
 }
 
+.section-sitemap-list__head {
+  margin-bottom: 80px;
+}
+
+ul.section-sitemap-list__sub,
+ul.section-sitemap-list__top {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+ul.section-sitemap-list__sub {
+  margin-top: 20px;
+  padding: 0;
+}
+
+ul.section-sitemap-list__top li {
+  font-size: calc(25px + 6 * ((100vw - 768px) / 912));
+  font-variant: all-small-caps;
+  margin-bottom: 30px;
+  width: 25%;
+}
+
+ul.section-sitemap-list__top li a {
+  display: block;
+  max-width: 270px;
+}
+
+ul.section-sitemap-list__sub li {
+  font-size: calc(14px + 6 * ((100vw - 768px) / 912));
+  margin-bottom: 15px;
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   .btn-inline {
     font-size: calc(20px + 6 * ((100vw - 768px) / 912));

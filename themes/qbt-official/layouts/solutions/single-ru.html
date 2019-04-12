@@ -3,7 +3,7 @@
 <head>
     {{ partial "head-ru.html" . }}
 </head>
-<body class="layout-primary">
+<body>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN9DFXT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -17,7 +17,17 @@
 
         <div class="layout-body">
 
-            {{ partial "sitemap/list-ru.html" . }}
+            {{ partial "solutions/solution-main.html" . }}
+
+            {{ partial "solutions/solution-info.html" . }}
+
+            {{ partial "solutions/solution-info2.html" . }}
+
+            <!--
+
+            {{ partial "solutions/solution-list.html" . }}
+
+            -->
 
             {{ partial "general/section-feedback-ru.html" . }}
 

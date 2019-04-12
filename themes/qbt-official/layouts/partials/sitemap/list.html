@@ -1,12 +1,34 @@
-<div class="section section-news-list">
+<div class="section section-sitemap-list">
     <div class="container">
-        <div class="grid-row">
-            <div class="grid-column">
-                <div class="module-title"><strong class="h3">{{ .Title }}</strong>
-                </div>
-            </div>
-            <div class="grid-column">
-            </div>
+        <div class="section-sitemap-list__head">
+            <strong class="h3">{{ .Title }}</strong>
         </div>
+      
+        <ul class="section-sitemap-list__top">
+            <li>
+              <a href="/">Main</a>
+            </li>
+            <li>
+              <a href="/news">News</a>
+            </li>
+            {{ range sort (where .Site.Sections "Section" "not in" "sitemap news solutions") "Pages" }}
+                <li>
+                    <a href="{{.RelPermalink}}">{{.Title}}</a>
+
+                    <ul class="section-sitemap-list__sub">
+                        {{ range first 10 .Pages}}
+                            <li>
+                                <a href="{{.RelPermalink}}">{{.Title}}</a>
+                            </li>
+                        {{ end }}
+                        {{ if gt .Pages 10}}
+                            <li>
+                              <a href="{{.RelPermalink}}">More...</a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ end }}
+        </ul>
     </div>
 </div>
