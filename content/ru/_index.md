@@ -1,4 +1,4 @@
 ---
-title: "QBT — Главная"
+title: "Главная"
 layout: index-ru
 ---

@@ -1,4 +1,4 @@
 ---
-title: "QBT — Main"
+title: "Main"
 layout: index-en
 ---
