@@ -1,3 +1,37 @@
+<script>
+  const QBT = {
+    defaultLanguage: 'en',
+    supportedLanguages: ['ru', 'ru-RU'], //exclude default language [en]
+    matchSupportedLanguage(str, languages) {
+      return str.match(new RegExp(`^\/(${languages.join('|')})`));
+    }
+  };
+
+  (function() {
+    const { defaultLanguage, supportedLanguages, matchSupportedLanguage } = QBT;
+    const { origin, pathname } = location;
+    const savedLang = localStorage.getItem('language');
+
+    if (
+      defaultLanguage === savedLang ||
+      matchSupportedLanguage(pathname, supportedLanguages)
+    ) { return; }
+
+    let lang = defaultLanguage;
+
+    if ('language' in navigator) {
+      lang = navigator.language;
+    } else if ('userLanguage' in navigator) {
+      lang = navigator.userLanguage;
+    }
+
+    if (supportedLanguages.includes(lang)) {
+      const url = new URL(origin);
+      url.pathname = `${lang}${pathname}`;
+      location.replace(url.href);
+    }
+  })()
+</script>
 
 <script src="/scripts/jquery/jquery-3.3.1.min.js"></script>
 <script src="/scripts/plugins/slick/slick.min.js"></script>
@@ -6,6 +40,57 @@
 <script src="/scripts/interface.js"></script>
 
 <script>
+        (function() {
+          const { defaultLanguage, supportedLanguages, matchSupportedLanguage } = QBT;
+          const $langLinks = $("a.language__link");
+          if ($langLinks.length === 0) return;
+          $langLinks.map((i, $el) => replaceHref($el));
+
+          $langLinks.click((e) => {
+            const requredLangMatch = getLangBy(e.target);
+            let requredLang = defaultLanguage;
+            if (requredLangMatch) {
+              requredLang = requredLangMatch[1];
+            }
+            localStorage.setItem('language', requredLang);
+          })
+
+          function getLangBy($link) {
+            const url = new URL($link.href);
+            const langMatch = matchSupportedLanguage(url.pathname, [...supportedLanguages, defaultLanguage]);
+            if (!langMatch) {
+              return null
+            } else {
+              return langMatch;
+            }
+          }
+
+          function replaceHref($link) {
+            const requredLangMatch = getLangBy($link);
+
+            if (!requredLangMatch) { return }
+
+            const { origin, pathname } = location;
+            const requredLang = requredLangMatch[1];
+
+            if (requredLang === defaultLanguage) {
+              const currentLangMatch = matchSupportedLanguage(pathname, supportedLanguages);
+              const currentLang = currentLangMatch ? currentLangMatch[0] : '';
+              const url = new URL($link.href.replace(requredLang, ''));
+
+              url.pathname = pathname.replace(`${currentLang}/`, '');
+              $link.href = url;
+            } else {
+              const url = new URL($link.href);
+              url.pathname = `${url.pathname}${pathname}`;
+
+              $link.href = url;
+            }
+            
+            return $link;
+          }
+        })();
+
         $("#qbtform").submit(function(e) {
             e.preventDefault();
             var $form = $(this);
