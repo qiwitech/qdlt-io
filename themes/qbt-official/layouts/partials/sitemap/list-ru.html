@@ -1,0 +1,15 @@
+<div class="section section-news-list">
+    <div class="container">
+        <div class="grid-row">
+            <div class="grid-column">
+                <div class="module-title"><strong class="h3">{{ .Title }}</strong>
+                </div>
+                <ul>
+                    {{ range .Site.Sections }}
+                        <li>{{.Title}} {{.Section}}</li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
