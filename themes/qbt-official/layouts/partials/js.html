@@ -2,13 +2,14 @@
   const QBT = {
     defaultLanguage: 'en',
     supportedLanguages: ['ru', 'ru-RU'], //exclude default language [en]
+    langRoutes: ['ru'],
     matchSupportedLanguage(str, languages) {
       return str.match(new RegExp(`^\/(${languages.join('|')})`));
     }
   };
 
   (function() {
-    const { defaultLanguage, supportedLanguages, matchSupportedLanguage } = QBT;
+    const { defaultLanguage, langRoutes, supportedLanguages, matchSupportedLanguage } = QBT;
     const { origin, pathname } = location;
     const savedLang = localStorage.getItem('language');
 
@@ -25,7 +26,15 @@
       lang = navigator.userLanguage;
     }
 
-    if (supportedLanguages.includes(lang)) {
+    if (!supportedLanguages.includes(lang)) { return; }
+
+    if (!langRoutes.includes(lang)) {
+      lang = matchSupportedLanguage(`/${lang}`, langRoutes);
+      if (!lang) { return; }
+      [lang] = lang;
+    }
+
+    if (lang && lang !== defaultLanguage) {
       const url = new URL(origin);
       url.pathname = `${lang}${pathname}`;
       location.replace(url.href);
