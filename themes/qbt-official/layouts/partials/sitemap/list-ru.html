@@ -14,12 +14,17 @@
             {{ range sort (where .Site.Sections "Section" "not in" "sitemap news") "Pages" }}
                 <li>
                     <a href="{{.RelPermalink}}">{{.Title}}</a>
-
                     <ul class="section-sitemap-list__sub">
-                        {{ range first 10 .Pages}}
-                            <li>
-                                <a href="{{.RelPermalink}}">{{.Title}}</a>
-                            </li>
+                        {{ range $i, $e := first 10 .Pages}}
+                            {{ if eq .Section "wiki" }}
+                              <li>
+                                  <a href="/ru/wiki/#wiki-{{$i}}">{{.Title}}</a>
+                              </li>
+                            {{ else }}
+                              <li>
+                                  <a href="{{.RelPermalink}}">{{.Title}}</a>
+                              </li>
+                            {{ end }}
                         {{ end }}
                         {{ if gt .Pages 10}}
                             <li>
