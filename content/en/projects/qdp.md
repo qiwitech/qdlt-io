@@ -5,7 +5,7 @@ tag: "type1"
 info:
     one: "A QDP (QIWI Distributed Processing) platform for industry customers"
     two: ""
-    img: "/images/content/qdp-min.png"
+    img: "/images/content/qdp-min.jpg"
 about:
     title: "About"
     text: "Our experts jointly with Center Korzhenevskogo developed a new platform for distributed processing. The QDP (QIWI Distributed Processing) platform uses open-source software and is based on distributed ledger technology (blockchain), which greatly enhances its safety and lowers maintenance costs. Dmitri Apollonov and Petr Kalambet oversaw the project on our part. Yuri Korzenevski was Project Leader.

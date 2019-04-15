@@ -1,0 +1,2 @@
+{{ $modernizr := resources.Get "scripts/plugins/modernizr-custom.js" | resources.Minify }}
+<script src="{{$modernizr.Permalink | relURL}}"></script>

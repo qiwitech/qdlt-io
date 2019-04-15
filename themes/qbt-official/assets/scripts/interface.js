@@ -1,3 +1,100 @@
+(function() {
+  const { defaultLanguage, supportedLanguages, matchSupportedLanguage } = QBT;
+  const $langLinks = $("a.language__link");
+  if ($langLinks.length === 0) return;
+  $langLinks.map((i, $el) => replaceHref($el));
+
+  $langLinks.click((e) => {
+    const requredLangMatch = getLangBy(e.target);
+    let requredLang = defaultLanguage;
+    if (requredLangMatch) {
+      requredLang = requredLangMatch[1];
+    }
+    localStorage.setItem('language', requredLang);
+  })
+
+  function getLangBy($link) {
+    const url = new URL($link.href);
+    const langMatch = matchSupportedLanguage(url.pathname, [...supportedLanguages, defaultLanguage]);
+    if (!langMatch) {
+      return null
+    } else {
+      return langMatch;
+    }
+  }
+
+  function replaceHref($link) {
+    const requredLangMatch = getLangBy($link);
+
+    if (!requredLangMatch) { return }
+
+    const { origin, pathname } = location;
+    const requredLang = requredLangMatch[1];
+
+    if (requredLang === defaultLanguage) {
+      const currentLangMatch = matchSupportedLanguage(pathname, supportedLanguages);
+      const currentLang = currentLangMatch ? currentLangMatch[0] : '';
+      const url = new URL($link.href.replace(requredLang, ''));
+
+      url.pathname = pathname.replace(`${currentLang}/`, '');
+      $link.href = url;
+    } else {
+      const url = new URL($link.href);
+      url.pathname = `${url.pathname}${pathname}`;
+
+      $link.href = url;
+    }
+    
+    return $link;
+  }
+})();
+
+$("#qbtform").submit(function(e) {
+  e.preventDefault();
+  var $form = $(this);
+
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LeFd3cUAAAAANtduyNbVRyrz4q18FzoiDWfdFWQ', {action: 'feedback'})
+    .then(function(token) {
+      var data = $form.serializeArray();
+      data.push({name: "gtoken", value: token});
+      $.post('/feedback', $.param(data))
+      .then(function() {
+        $("#qbtform").hide()
+        $("#qbtform").trigger('reset')
+        $("#formsent").show();
+      }).catch(function(){
+        $("#qbtform").hide()
+        $("#qbtform").trigger('reset')
+        $("#formerror").show();
+      });
+    });
+  });
+});
+
+$("#vacancy").submit(function(e) {
+  e.preventDefault();
+  var $form = $(this);
+
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6LeFd3cUAAAAANtduyNbVRyrz4q18FzoiDWfdFWQ', {action: 'career'})
+    .then(function(token) {
+      var data = $form.serializeArray();
+      data.push({name: "gtoken", value: token});
+      $.post('/job', $.param(data))
+      .then(function() {
+        $("#vacancy").hide()
+        $("#vacancy").trigger('reset')
+        $("#cvsent").show(); 
+      }).catch(function(){
+        $("#vacancy").hide()
+        $("#vacancy").trigger('reset')
+        $("#cverror").show();
+      });
+    });
+  });
+});
+
 function autosize() {
 	var control = $('textarea.form-control');
 
@@ -20,7 +117,6 @@ function controlEffect() {
 			}
 		});
 	}
-
 }
 
 function sliderTeam() {

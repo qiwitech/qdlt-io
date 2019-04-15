@@ -5,7 +5,7 @@ tag: "type1"
 info:
     one: "A technical concept for a decentralized credit marketplace"
     two: ""
-    img: "/images/content/7seconds-min.png"
+    img: "/images/content/7seconds-min.jpg"
 about:
     title: "About"
     text: "7Seconds is a decentralized credit marketplace allowing customers to instantly select a loan offer with the best terms and interest rate.</p><p>

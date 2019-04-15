@@ -5,7 +5,7 @@ tag: "type2"
 info:
     one: "SKYFсhain, a blockchain-based platform for unmanned cargo transport"
     two: ""
-    img: "/images/content/skyf-min.png"
+    img: "/images/content/skyf-min.jpg"
 about:
     title: "Problem"
     text: "A fundamental weakness of the cargo market today is a huge amount of manual labor. This directly affects the cost of services. To break the deadlock and significantly reduce the cost of maintenance, the market needs unmanned cargo logistics."

@@ -5,7 +5,7 @@ tag: "type1"
 info:
     one: "A national network for exchanging and storing financial data via blockchain technology"
     two: ""
-    img: "/images/content/masterchain.png"
+    img: "/images/content/masterchain-bg.jpg"
 about:
     title: "About"
     text: "Masterchain is the first national network for exchanging and storing financial data. It allows to effect payment online, promptly actualize the data as well as create financial services. Major Russian banks participated in developing the platform: the Central Bank of Russia, Sberbank, Alfa-Bank, FK Otkrytie, Tinkoff Bank, and the QIWI Group. As for now, the platform features the following services: a decentralized depository system for invoice accounting, a distributed registry of digital bank guarantees, emission of digital letters of credit, and the Know Your Customer project to prevent fraudulent transactions."

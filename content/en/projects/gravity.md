@@ -5,7 +5,7 @@ tag: "type2"
 info:
     one: "Audit of the Delegated Proof-of-Importance protocol to evaluate information security risks "
     two: ""
-    img: "/images/content/gravity-min.png"
+    img: "/images/content/gravity-min.jpg"
 about:
     title: "About"
     text: "The Gravity company has developed the Delegated Proof-of-Importance protocol that integrates the concepts of the Delegated Proof-of-Stake (DPoS) and Proof-of-Importance (PoI) algorithms. The protocol builds upon the modified Graphene core and takes into account the transactional activity of the node in the network, in addition to its ownership share. Thus, the rate of emission in the network depends on the economy (network) growth, and network users are rewarded based on their engagement level. The protocol also allows all network members to delegate the right to validate blocks to a limited number of participants

@@ -384,16 +384,16 @@ template {
   font-family: 'Formular';
   font-weight: 500;
   font-style: normal;
-  src: url('../fonts/formular/medium/formular-medium.eot');
-  src: url('../fonts/formular/medium/formular-medium.eot?#iefix') format('embedded-opentype'), url('../fonts/formular/medium/formular-medium.woff2') format('woff2'), url('../fonts/formular/medium/formular-medium.woff') format('woff'), url('../fonts/formular/medium/formular-medium.ttf') format('truetype'), url('../fonts/formular/medium/formular-medium.svg#formular-medium') format('svg');
+  src: url('/fonts/formular/medium/formular-medium.eot');
+  src: url('/fonts/formular/medium/formular-medium.eot?#iefix') format('embedded-opentype'), url('/fonts/formular/medium/formular-medium.woff2') format('woff2'), url('/fonts/formular/medium/formular-medium.woff') format('woff'), url('/fonts/formular/medium/formular-medium.ttf') format('truetype'), url('/fonts/formular/medium/formular-medium.svg#formular-medium') format('svg');
 }
 
 @font-face {
   font-family: 'Formular';
   font-weight: 700;
   font-style: normal;
-  src: url('../fonts/formular/bold/formular-bold.eot');
-  src: url('../fonts/formular/bold/formular-bold.eot?#iefix') format('embedded-opentype'), url('../fonts/formular/bold/formular-bold.woff2') format('woff2'), url('../fonts/formular/bold/formular-bold.woff') format('woff'), url('../fonts/formular/bold/formular-bold.ttf') format('truetype'), url('../fonts/formular/bold/formular-bold.svg#formular-bold') format('svg');
+  src: url('/fonts/formular/bold/formular-bold.eot');
+  src: url('/fonts/formular/bold/formular-bold.eot?#iefix') format('embedded-opentype'), url('/fonts/formular/bold/formular-bold.woff2') format('woff2'), url('/fonts/formular/bold/formular-bold.woff') format('woff'), url('/fonts/formular/bold/formular-bold.ttf') format('truetype'), url('/fonts/formular/bold/formular-bold.svg#formular-bold') format('svg');
 }
 
 .layout-header {

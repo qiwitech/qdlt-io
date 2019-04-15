@@ -5,7 +5,7 @@ tag: "type4"
 info:
     one: "Automated system for volunteering activities based on the Masterchain platform"
     two: ""
-    img: "/images/content/lepta-min.png"
+    img: "/images/content/lepta-min.jpg"
 about:
     title: "About"
     text: "The Lepta project was tasked to create an automated system (AS) for volunteering based on the Masterchain platform and use of tokens. Due to an increase in its transparency, the system should also multiply volunteering activities.
