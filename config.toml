@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://qiwi.tech"
 title = "QBT - QIWI Blockchain Technologies"
 theme = "qbt-official"
 copyright = "QBT - QIWI Blockchain Technologies"
