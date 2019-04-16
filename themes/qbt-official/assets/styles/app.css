@@ -5244,6 +5244,15 @@ ul.section-sitemap-list__sub li {
   .section-projects__head {
     margin-bottom: 80px;
   }
+
+  ul.section-sitemap-list__top li {
+    width: 50%;
+  }
+
+  ul.section-sitemap-list__sub {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 767px) {
@@ -6057,6 +6066,19 @@ ul.section-sitemap-list__sub li {
 
   .section-projects__body .module-info {
     margin-bottom: 15px;
+  }
+
+  ul.section-sitemap-list__top li {
+    width: 100%;
+  }
+
+  ul.section-sitemap-list__sub {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  ul.section-sitemap-list__sub li {
+    font-size: calc(20px + 6 * ((100vw - 768px) / 912));
   }
 }
 
