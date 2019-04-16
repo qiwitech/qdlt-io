@@ -1,16 +1,25 @@
 <a name="section-2"></a>
-<div class="section section-list section_success">
+<div class="section section-list section_primary">
     <div class="container">
-            
-        <div class="section-list__head"><strong class="h3">Consulting</strong>
+        
+        <div class="section-list__head"><strong class="h3">Business digitization and blockchain strategy development </strong>
         </div>
         <div class="section-list__body">
             <div class="module-list">
-                    {{ range where .Data.Pages "Params.tag" "type2" }}
+
+                {{ range where .Data.Pages "Params.tag" "type1" }}
                     <div class="module-list__item">
                         <div class="article-primary">
                             <div class="article-primary__body">
-                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                                {{ if ne .Params.About nil }}
+                                  <h3>
+                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                  </h3>
+                                {{ else }}
+                                  <h3>
+                                    {{ .Title }}
+                                  </h3>
+                                {{ end }}
                                 <div class="module-info">
                                     <div class="module-info__column">
                                         <p>
@@ -24,14 +33,17 @@
                                 </div>
                             </div>
                             <div class="article-primary__media">
+                              {{ if ne .Params.About nil }}
                                 <a href="{{ .Permalink }}">
                                     <img src="{{ .Params.info.img }}" alt="{{ .Title }}" class="article-primary__img">
                                 </a>
+                              {{ else }}
+                                  <img src="{{ .Params.info.img }}" alt="{{ .Title }}" class="article-primary__img">
+                              {{ end }}
                             </div>
                         </div>
                     </div>
-    
-                    {{ end }}
+                {{ end }}
             </div>
         </div>
     </div>

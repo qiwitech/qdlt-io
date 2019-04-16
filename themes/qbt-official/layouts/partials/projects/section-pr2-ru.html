@@ -1,38 +1,49 @@
 <a name="section-2"></a>
-<div class="section section-list section_success">
-    <div class="container">
-            
-        <div class="section-list__head"><strong class="h3">Консалтинг</strong>
-        </div>
-        <div class="section-list__body">
-            <div class="module-list">
-                    {{ range where .Data.Pages "Params.tag" "type2" }}
-                    <div class="module-list__item">
-                        <div class="article-primary">
-                            <div class="article-primary__body">
-                                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-                                <div class="module-info">
-                                    <div class="module-info__column">
-                                        <p>
-                                            <svg class="icon icon-square">
-                                                <use xlink:href="#icon-square"></use>
-                                            </svg>{{ .Params.info.one }}</p>
-                                    </div>
-                                    <div class="module-info__column">
-                                        <p>{{ .Params.info.two }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-primary__media">
-                                <a href="{{ .Permalink }}">
-                                    <img src="{{ .Params.info.img }}" alt="{{ .Title }}" class="article-primary__img">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-    
-                    {{ end }}
-            </div>
-        </div>
-    </div>
+<div class="section section-list section_primary">
+  <div class="container">
+      <div class="section-list__head">
+        <strong class="h3">Обучающие продукты</strong>
+      </div>
+      <div class="section-list__body">
+          <div class="module-list">
+              {{ range where .Data.Pages "Params.tag" "type1" }}
+                  <div class="module-list__item">
+                      <div class="article-primary">
+                          <div class="article-primary__body">
+                              {{ if ne .Params.About nil }}
+                                <h3>
+                                  <a href="{{ .Permalink }}">{{ .Title }}</a>
+                                </h3>
+                              {{ else }}
+                                <h3>
+                                  {{ .Title }}
+                                </h3>
+                              {{ end }}
+                              <div class="module-info">
+                                  <div class="module-info__column">
+                                      <p>
+                                          <svg class="icon icon-square">
+                                              <use xlink:href="#icon-square"></use>
+                                          </svg>{{ .Params.info.one }}</p>
+                                  </div>
+                                  <div class="module-info__column">
+                                      <p>{{ .Params.info.two }}</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="article-primary__media">
+                            {{ if ne .Params.About nil }}
+                              <a href="{{ .Permalink }}">
+                                  <img src="{{ .Params.info.img }}" alt="{{ .Title }}" class="article-primary__img">
+                              </a>
+                            {{ else }}
+                                <img src="{{ .Params.info.img }}" alt="{{ .Title }}" class="article-primary__img">
+                            {{ end }}
+                          </div>
+                      </div>
+                  </div>
+              {{ end }}
+          </div>
+      </div>
+  </div>
 </div>
