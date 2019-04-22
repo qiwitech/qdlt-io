@@ -21,37 +21,6 @@
                         <use xlink:href="#icon-square"></use>
                     </svg><a href="/ru/projects">10+ проектов</a></div>
             </div>
-            <div class="module-gallery">
-                <div class="module-gallery__body">
-                    <div class="slider-default slider-default_space">
-                            
-                        {{ range where .Data.Pages "Params.tag" "type1" }}
-                            <div data-headline="{{ .Title }}" class="slider-default__item">
-                                    <a href="{{ .Permalink }}"><img src="{{ .Params.info.img }}" alt=""></a>
-                            </div>
-                        {{ end }}
-                        {{ range where .Data.Pages "Params.tag" "type2" }}
-                            <div data-headline="{{ .Title }}" class="slider-default__item">
-                                    <a href="{{ .Permalink }}"><img src="{{ .Params.info.img }}" alt=""></a>
-                            </div>
-                        {{ end }}
-                        {{ range where .Data.Pages "Params.tag" "type4" }}
-                            <div data-headline="{{ .Title }}" class="slider-default__item">
-                                    <a href="{{ .Permalink }}"><img src="{{ .Params.info.img }}" alt=""></a>
-                            </div>
-                        {{ end }}
-
-                    </div>
-                </div>
-                <div class="module-gallery__footer column-reverse">
-                    <div class="module-gallery__column">
-                        <div class="module-gallery__nav"></div>
-                    </div>
-                    <div class="module-gallery__column">
-                        <div class="module-gallery__headline"></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
