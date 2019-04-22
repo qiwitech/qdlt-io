@@ -1,50 +1,17 @@
 <a name="section-2"></a>
 <div class="section section-list section_primary">
-    <div class="container">
-        
-        <div class="section-list__head"><strong class="h3">Business digitization and blockchain strategy development </strong>
-        </div>
-        <div class="section-list__body">
-            <div class="module-list">
-
-                {{ range where .Data.Pages "Params.tag" "type1" }}
-                    <div class="module-list__item">
-                        <div class="article-primary">
-                            <div class="article-primary__body">
-                                {{ if ne .Params.About nil }}
-                                  <h3>
-                                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                                  </h3>
-                                {{ else }}
-                                  <h3>
-                                    {{ .Title }}
-                                  </h3>
-                                {{ end }}
-                                <div class="module-info">
-                                    <div class="module-info__column">
-                                        <p>
-                                            <svg class="icon icon-square">
-                                                <use xlink:href="#icon-square"></use>
-                                            </svg>{{ .Params.info.one }}</p>
-                                    </div>
-                                    <div class="module-info__column">
-                                        <p>{{ .Params.info.two }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="article-primary__media">
-                              {{ if ne .Params.About nil }}
-                                <a href="{{ .Permalink }}">
-                                    <img src="{{ .Params.info.img }}" alt="{{ .Title }}" class="article-primary__img">
-                                </a>
-                              {{ else }}
-                                  <img src="{{ .Params.info.img }}" alt="{{ .Title }}" class="article-primary__img">
-                              {{ end }}
-                            </div>
-                        </div>
-                    </div>
-                {{ end }}
-            </div>
-        </div>
-    </div>
+  <div class="container">
+      <div class="section-list__head">
+        <strong class="h3">Education products</strong>
+      </div>
+      <div class="section-list__body">
+          <div class="module-list">
+              <div class="module-info">
+                <div class="module-info__column">
+                  <p>QIWI Blockchain Technologies conducts corporate training for middle and top executives. Course listeners get a comprehensive understanding of blockchain technology, its principles and applicability.</p>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
