@@ -3291,6 +3291,16 @@ a {
   color: #ff8c00;
 }
 
+p a {
+  -webkit-transition: color .3s ease, border-bottom-color .3s ease;
+  transition: color .3s ease, border-bottom-color .3s ease;
+  border-bottom: 0.08em solid #7f7f7f;
+}
+
+.no-touchevents p a:hover {
+  border-bottom-color: transparent;
+}
+
 .link-underline {
   -webkit-text-decoration-skip: ink;
   text-decoration-skip: ink;
@@ -3532,6 +3542,10 @@ input {
   width: 50%;
   padding-right: 40px;
   padding-left: 40px;
+}
+
+.article-default__aside .module-media {
+  margin-top: 40px;
 }
 
 .article-default__body {

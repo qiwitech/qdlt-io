@@ -11,14 +11,36 @@
                         {{ range .Data.Pages.ByDate.Reverse }}
 
                         <div class="list-primary__item js_animate">
+
+                            {{ if ne .Params.img nil }}
+
+                            <div class="article-primary">
+                                <div class="article-primary__body">
+                                    <a href="{{ .Permalink }}" class="artile-success__title"> {{ .Title}} <span>see more</span></a>
+                                </div>
+                                <div class="article-primary__media">
+                                    <a href="{{ .Permalink }}">
+                                        <img src="{{ .Params.img }}" alt="{{ .Title }}" class="article-primary__img">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="article-success__footer">
+                                <time datetime="2017-12-08">{{.Date.Format "02.01.06"}}</time>
+                            </div>
+
+                            {{ else }}
+
                             <div class="article-success">
-                                <div class="article-success__head"><a href="{{ .Permalink }}" class="artile-success__title"> {{ .Title}}
-        <span>see more</span></a>
+                                <div class="article-success__head">
+                                    <a href="{{ .Permalink }}" class="artile-success__title"> {{ .Title}} <span>see more</span></a>
                                 </div>
                                 <div class="article-success__footer">
                                     <time datetime="2017-12-08">{{.Date.Format "02.01.06"}}</time>
                                 </div>
                             </div>
+
+                            {{ end }}
+
                         </div>
 
                         {{ end }}
