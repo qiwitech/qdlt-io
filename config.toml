@@ -51,10 +51,24 @@ defaultContentLanguageInSubdir = true
 
 
 
-[[params.social]]
-  title = "Facebook"
-  url = "https://www.facebook.com/qiwitech/"
-[[params.social]]
-  title = "LinkedIn"
-  url = "https://www.linkedin.com/company/qiwi-blockchain-technologies/"
+[params.social]
 
+  [[params.social.en]]
+    title = "Facebook"
+    url = "https://www.facebook.com/qiwitech"
+  [[params.social.en]]
+    title = "Medium"
+    url = "https://medium.com/qiwi-blockchain-technologies"
+  [[params.social.en]]
+    title = "LinkedIn"
+    url = "https://www.linkedin.com/company/qiwi-blockchain-technologies"
+
+  [[params.social.ru]]
+    title = "Facebook"
+    url = "https://www.facebook.com/qiwitech"
+  [[params.social.ru]]
+    title = "Medium"
+    url = "https://medium.com/qdlt"
+  [[params.social.ru]]
+    title = "LinkedIn"
+    url = "https://www.linkedin.com/company/qiwi-blockchain-technologies"
