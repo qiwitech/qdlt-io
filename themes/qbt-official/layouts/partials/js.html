@@ -5,12 +5,12 @@
 {{ $inview := resources.Get "scripts/plugins/in-view/in-view.min.js" | resources.Minify }}
 {{ $interface := resources.Get "scripts/interface.js" | resources.Minify }}
 
-<script src={{$qbt.Permalink | relURL}}></script>
-<script src={{$jquery.Permalink | relURL}}></script>
-<script src={{$slick.Permalink | relURL}}></script>
-<script src={{$autosize.Permalink | relURL}}></script>
-<script src={{$inview.Permalink | relURL}}></script>
-<script src={{$interface.Permalink | relURL}}></script>
+<script src={{$qbt.Permalink | absURL}}></script>
+<script src={{$jquery.Permalink | absURL}}></script>
+<script src={{$slick.Permalink | absURL}}></script>
+<script src={{$autosize.Permalink | absURL}}></script>
+<script src={{$inview.Permalink | absURL}}></script>
+<script src={{$interface.Permalink | absURL}}></script>
 
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
