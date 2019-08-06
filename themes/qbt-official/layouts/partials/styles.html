@@ -1,2 +1,2 @@
 {{ $css := resources.Get "styles/app.css" | resources.Minify }}
-<link href="{{$css.Permalink | relURL}}" rel="stylesheet">
+<link href="{{$css.Permalink | absURL}}" rel="stylesheet">
